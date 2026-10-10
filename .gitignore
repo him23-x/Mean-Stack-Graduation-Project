@@ -1,0 +1,11 @@
+# backend
+backend/node_modules/
+backend/config.env
+
+# frontend (Angular)
+frontend/node_modules/
+frontend/dist/
+frontend/.angular/
+
+# general
+.env

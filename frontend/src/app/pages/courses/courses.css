@@ -1,0 +1,212 @@
+.dashboard-container {
+  min-height: 100vh;
+  background-color: #0b1220;
+  color: #f8fafc;
+  padding: 30px;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.top-header {
+  margin-bottom: 30px;
+}
+
+.header-title h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: #ffffff;
+}
+
+.header-title p {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin: 0 0 20px 0;
+}
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #334155;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #0b1220;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 7px 12px;
+  flex: 1;
+  min-width: 240px;
+  gap: 8px;
+}
+
+.search-icon {
+  width: 15px;
+  height: 15px;
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.search-box input {
+  background: none;
+  border: none;
+  color: #f8fafc;
+  outline: none;
+  width: 100%;
+  font-size: 0.9rem;
+}
+
+.category-filter {
+  display: flex;
+  gap: 6px;
+}
+
+.cat-btn {
+  background-color: #0b1220;
+  color: #94a3b8;
+  border: 1px solid #334155;
+  padding: 7px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+}
+
+.cat-btn:hover {
+  border-color: #475569;
+  color: #f1f5f9;
+}
+
+.cat-btn.active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.course-card {
+  background-color: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.card-banner {
+  margin-bottom: 12px;
+}
+
+.category-tag {
+  background-color: rgba(59, 130, 246, 0.18);
+  color: #93c5fd;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.course-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #f8fafc;
+  margin: 0 0 4px 0;
+}
+
+.instructor {
+  color: #a8b3c7;
+  font-size: 0.83rem;
+  margin: 0 0 10px 0;
+}
+
+.description {
+  color: #cbd5e1;
+  font-size: 0.87rem;
+  margin-bottom: 16px;
+}
+
+.card-action {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-top: 1px solid #334155;
+  padding-top: 14px;
+}
+
+.btn-enroll {
+  background-color: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+
+.btn-enroll:hover {
+  background-color: #1d4ed8;
+}
+
+.admin-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-edit {
+  background-color: #334155;
+  color: #f8fafc;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.15s;
+}
+
+.btn-edit:hover {
+  background-color: #475569;
+}
+
+.btn-cancel {
+  background-color: #ef4444;
+  color: #ffffff;
+  border: none;
+  padding: 7px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background-color 0.15s;
+}
+
+.btn-cancel:hover {
+  background-color: #dc2626;
+}
+
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px;
+  color: #64748b;
+  font-size: 0.95rem;
+}

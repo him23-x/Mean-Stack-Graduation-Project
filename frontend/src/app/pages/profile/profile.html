@@ -1,0 +1,60 @@
+<div class="profile-container">
+  <header class="top-header">
+    <h1>My Profile</h1>
+    <p>Manage your account settings and personal details.</p>
+  </header>
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  @if (user(); as u) {
+    <div class="profile-grid">
+      <div class="profile-card user-main-card">
+        <div class="avatar-circle">{{ u.name.charAt(0) }}</div>
+        <h2 class="user-name">{{ u.name }}</h2>
+        <p class="user-role">{{ u.role }}</p>
+      </div>
+
+      <div class="profile-card details-card">
+        <div class="card-header">
+          <h3>Personal Information</h3>
+
+          @if (!isEditing()) {
+            <button class="btn-edit" (click)="toggleEdit()">Edit Profile</button>
+          } @else {
+            <div class="action-buttons">
+              <button class="btn-cancel-edit" (click)="toggleEdit()">Cancel</button>
+              <button class="btn-save" (click)="saveChanges()">Save Changes</button>
+            </div>
+          }
+        </div>
+
+        <div class="info-list">
+          <div class="info-item">
+            <label class="info-label">Full Name</label>
+            @if (!isEditing()) {
+              <div class="info-value">{{ u.name }}</div>
+            } @else {
+              <input type="text" class="edit-input" [(ngModel)]="editData.name" />
+            }
+          </div>
+
+          <div class="info-item">
+            <label class="info-label">Email Address</label>
+            @if (!isEditing()) {
+              <div class="info-value">{{ u.email }}</div>
+            } @else {
+              <input type="email" class="edit-input" [(ngModel)]="editData.email" />
+            }
+          </div>
+
+          <div class="info-item">
+            <label class="info-label">Role</label>
+            <div class="info-value">{{ u.role }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+</div>

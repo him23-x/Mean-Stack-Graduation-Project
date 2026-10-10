@@ -1,0 +1,41 @@
+<div class="dashboard-container">
+  <header class="top-header">
+    <div class="header-title">
+      <h1>Manage Users</h1>
+      <p>View all registered users and update their roles.</p>
+    </div>
+  </header>
+
+  @if (error()) {
+    <p class="error">{{ error() }}</p>
+  }
+
+  <div class="table-card">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (user of users(); track user._id) {
+          <tr>
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td><span class="role-badge" [class.role-admin]="user.role === 'admin'">{{ user.role }}</span></td>
+            <td class="actions-cell">
+              @if (user._id !== currentUserId()) {
+                <button class="btn-role" (click)="toggleRole(user)">
+                  Make {{ user.role === 'admin' ? 'student' : 'admin' }}
+                </button>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>

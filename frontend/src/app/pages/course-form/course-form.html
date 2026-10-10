@@ -1,0 +1,38 @@
+<div class="dashboard-container">
+  <header class="top-header">
+    <div class="header-title">
+      <h1>{{ isEdit ? 'Edit Course' : 'New Course' }}</h1>
+      <p>{{ isEdit ? 'Update the details for this course.' : 'Fill in the details to create a new course.' }}</p>
+    </div>
+  </header>
+
+  @if (error) {
+    <p class="error">{{ error }}</p>
+  }
+
+  <div class="form-card">
+    <form (ngSubmit)="submit()">
+      <label>
+        Title
+        <input type="text" name="title" [(ngModel)]="course.title" required />
+      </label>
+      <label>
+        Instructor
+        <input type="text" name="instructor" [(ngModel)]="course.instructor" required />
+      </label>
+      <label>
+        Category
+        <input type="text" name="category" [(ngModel)]="course.category" />
+      </label>
+      <label>
+        Description
+        <textarea name="description" rows="4" [(ngModel)]="course.description"></textarea>
+      </label>
+
+      <div class="form-actions">
+        <a routerLink="/admin/courses" class="btn-secondary-dark">Cancel</a>
+        <button type="submit" class="btn-auth">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
